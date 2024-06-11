@@ -32,6 +32,16 @@ The images for the project's data set are divided into the following:
 | Images of Adults| 9,212          |
 | **Total Images**| **14,635**     |
 
+## Image Examples
+
+Below are some example images from the dataset:
+
+<p align="center">
+  <img src="https://github.com/MartaFuentesF/capstone_project/blob/main/images_and_graphs/image_examples/PLP_examples.JPG" alt="Samples of Portraits of Youth (PLP)" width="30%">
+  <img src="https://github.com/MartaFuentesF/capstone_project/blob/main/images_and_graphs/image_examples/POR_examples.JPG" alt="Samples of Portraits of Adults (POR)" width="30%">
+  <img src="https://github.com/MartaFuentesF/capstone_project/blob/main/images_and_graphs/image_examples/Problematic_images.JPG" alt="Samples of Potentially Problematic Images" width="30%">
+</p>
+
 The distinction between adults and youth was chosen at 13 years of age. Some overlap is present in the directories, which could lead to the model having difficulty classifying pre-teenager youth.
 
 ### Data Preparation
