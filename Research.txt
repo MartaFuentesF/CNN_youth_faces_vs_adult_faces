@@ -1,0 +1,27 @@
+## Research on determining the right number of neurons to use in this CNN.
+
+Source: [Kaggle.com]('https://www.kaggle.com/discussions/questions-and-answers/66490')
+* Ajay Shewale: The optimal size of the hidden layer is usually between the size of the input and size of the output layers.
+The number of hidden neurons should be 2/3 the size of the input layer, plus the size of the output layer.
+The number of hidden neurons should be less than twice the size of the input layer. Note: Posted 6 years ago.
+
+Source: [towardsdatascience.com]('https://towardsdatascience.com/deciding-optimal-filter-size-for-cnns-d6f7b56f9363')
+* Sabyasachi Sahoo: ... an added benefit of using a small kernel instead of a fully connected network is to benefit from weight sharing and reduction in computational costs. To briefly explain this point, since we use the same kernel for different set of pixels in an image, the same weights are shared across these pixel sets as we convolve on them. And as the number of weights are less than a fully connected layer, we have lesser weights to back-propagate on.
+
+* 
+
+
+
+
+
+
+
+
+
+
+- CNN1's architecture is 512 to 64 to 1, change that to 512 - 256 -1 for CNN2
+- Change filter size to 3*3 (should improve time, maybe look for bigger patterns...)
+
+- consider changing kernel size
+- scaling!
+- Fun fact! kernel and filter are used interchangeably in CNNs
