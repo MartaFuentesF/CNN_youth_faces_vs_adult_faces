@@ -174,19 +174,19 @@ The performance of the models was evaluated using accuracy and loss metrics:
 | CNN 4 | 0.6682        | 0.5934            | 0.6603          | 0.6025              | High dropout reduced overfitting but led to underfitting, causing lower accuracy.                 |
 
 
-## Results and Observations
-
-### Graphs
 Below are the graphs of binary cross-entropy versus epochs and accuracy as a function of epochs for the models.
+### CNN Loss Function & Accuracy Graphs
 
-![CNN1 Loss Function & Accuracy]('https://github.com/MartaFuentesF/capstone_project/blob/main/images_and_graphs/cnn_graphs_and_diagrams/cnn1.png?raw=true')
-
-![CNN2 Loss Function & Accuracy]('https://github.com/MartaFuentesF/capstone_project/blob/main/images_and_graphs/cnn_graphs_and_diagrams/cnn2.png?raw=true')
-
-![CNN3 Loss Function & Accuracy]('')
-
-![CNN1 Loss Function & Accuracy]('')
-
+<table style="width:100%">
+  <tr>
+    <td><img src="https://github.com/MartaFuentesF/capstone_project/blob/main/images_and_graphs/cnn_graphs_and_diagrams/cnn1.png?raw=true" alt="CNN1 Loss Function & Accuracy" width="100%"></td>
+    <td><img src="https://github.com/MartaFuentesF/capstone_project/blob/main/images_and_graphs/cnn_graphs_and_diagrams/cnn2.png?raw=true" alt="CNN2 Loss Function & Accuracy" width="100%"></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/MartaFuentesF/capstone_project/blob/main/images_and_graphs/cnn_graphs_and_diagrams/cnn3_graph.png?raw=true" alt="CNN3 Loss Function & Accuracy" width="100%"></td>
+    <td><img src="https://github.com/MartaFuentesF/capstone_project/blob/main/images_and_graphs/cnn_graphs_and_diagrams/cnn4_graph.png?raw=true" alt="CNN4 Loss Function & Accuracy" width="100%"></td>
+  </tr>
+</table>
 
 ### Model Performance
 
