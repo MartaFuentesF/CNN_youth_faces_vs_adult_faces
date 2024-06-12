@@ -1,7 +1,7 @@
 # Distinguishing Adult and Youth Faces Using Convolutional Neural Networks
 
 ## Introduction
-The objective of this project is to develop a Convolutional Neural Network (CNN) model capable of distinguishing between the faces of adults and youth (up to the age of 13). Using TensorFlow and Keras, three CNN models were built and trained on a dataset comprising images of both adults and youth. This report provides an overview of the models, their performance, and potential applications.
+The objective of this project is to develop a Convolutional Neural Network (CNN) model capable of distinguishing between the faces of adults and youth (up to the age of 13). Using TensorFlow and Keras, five CNN models were built and trained on a dataset comprising images of both adults and youth. This report provides an overview of the models, their performance, and potential applications. This project's focus became learning how to improve the performance of CNNs by adding regularizers, and changing arguments in the .fit() and compile() to improve the model's performance. To this end, there are 5 cnns that were built and fit.
 
 ## Potential Applications
 While law enforcement is a primary potential user of this model, several other sectors could benefit from this technology:
@@ -14,13 +14,13 @@ While law enforcement is a primary potential user of this model, several other s
 
 ### Data Acquisition
 
-
-The data was acquired from Wernher (Vern) Krutein,the owner and creator of [photovault.com]('photovault.com')
+The data was acquired from Wernher (Vern) Krutein,the owner and creator of [photovault.com]('photovault.com'). 
 
 Wernher Krutein is a digital artist, photographer, filmmaker, historian, and archivist. Over the past sixty years, he has built a vast archive that includes original negatives, slides, prints, videos, films, and various other media. His collection spans a wide range of subjects from Aerospace to Zimbabwe and includes contributions from over a hundred artists and photographers.
 
 The images are meticulously cataloged, with each item labeled with relevant historical information. This extensive documentation adds significant value to the collection, making it a valuable resource for various applications.
 
+After I contacted Vern, he generously agreed to give me access to his image repositories on his server.
 I would like to express my sincere gratitude to Wernher Krutein for providing access to this invaluable resource. His lifelong dedication to archiving and preserving such a diverse range of images has made this project possible. For more information about his work and collection, please visit [photovault.com](https://photovault.com/). 
 
 #### Image Dataset Information
@@ -44,12 +44,14 @@ Below are some example images from the dataset:
 
 The distinction between adults and youth was chosen at 13 years of age. Some overlap is present in the directories, which could lead to the model having difficulty classifying pre-teenager youth.
 
+The sample images show samples from the POR (adults) data set, the PLP (youth) data set, in addition to a sample of images that could be considered problematic in the context of training a binary-classification model. These images are present in both data sets, some have more than one face in them, some have faces of youth and adults in the same image. Some are full body portraits taken at a distance. I predict these images will not contribute to the success of my model. In my future work, I want to investigate using bounding boxes, or manually cleaning the dataset, to see if it improves the CNN's performance. 
+
 ### Data Preparation
 
 I prepared the data using two different approaches. First I will describe the approach that was successful. For interested readers, I will also describe the approach that was not successful, as an addendum at the bottom of this report.
 
 The process I used is from ['a repository on github.com'], and it is copyrighted: Copyright 2018 The TensorFlow Authors.
-In order to use keras' `image_dataset_from_directory()` function, a 'data_dir' directory was used; it containes the directories 'POR' (portraits of adults) and 'PLP' (portraits of youth). Using the process describe in the source cited, training and validation data sets were created as 'train_ds' and 'val_ds.' Each having a `validation_split` of 0.2. The result output is the following:
+In order to use keras' `image_dataset_from_directory()` function, a 'data_dir' directory was created; it contains the directories 'POR' (portraits of adults) and 'PLP' (portraits of youth). Using the process describe in the source cited, training and validation data sets were created as 'train_ds' and 'val_ds.' Each having a `validation_split` of 0.2. The result output is the following:
 
     - Found 14633 files belonging to 2 classes.
     - Using 11707 files for training.
