@@ -189,7 +189,7 @@ The performance of the models was evaluated using accuracy and loss metrics:
 </table>
 
 ### CNN4 ROC Curve with AUC score
-![CNN4 ROC AUC]('')
+![CNN4 ROC AUC]('https://github.com/MartaFuentesF/capstone_project/blob/main/images_and_graphs/cnn_graphs_and_diagrams/cnn4_ROC.png?raw=true')
 
 ## Summary of Results
 
