@@ -1,7 +1,7 @@
 # Distinguishing Adult and Youth Faces Using Convolutional Neural Networks
 
 ## Introduction
-The objective of this project is to develop a Convolutional Neural Network (CNN) model capable of distinguishing between the faces of adults and youth (up to the age of 13). Using TensorFlow and Keras, five CNN models were built and trained on a dataset comprising images of both adults and youth. This report provides an overview of the models, their performance, and potential applications. The focus of this project was on improving the performance of CNNs by adding regularizers and adjusting arguments in the `.fit()` and `.compile()` methods. To this end, five CNNs were built and evaluated.
+The objective of this project is to develop a Convolutional Neural Network (CNN) model capable of distinguishing between the faces of adults and youth (up to the age of 13). Using TensorFlow and Keras, five CNN models were built and trained on a dataset comprising images of both adults and youth. This report provides an overview of the models, their performance, and potential applications. The focus of this project was on improving the performance of CNNs by adding regularizers and adjusting arguments in the `.fit()` and `.compile()` methods. To this end, five CNNs were built and evaluated using the value of their loss functions (binary-crossentropy), accuracy as well as an F1 score for the fourth model.
 
 ### Important Considerations
 * These models require significant computing power. Each took approximately 10 hours to fit using an M3 chip with 18GB of memory.
@@ -179,8 +179,8 @@ The performance of the models was evaluated using accuracy and loss metrics:
 
 <table style="width:100%">
   <tr>
-    <td><img src="https://github.com/MartaFuentesF/capstone_project/blob/main/images_and_graphs/cnn_graphs_and_diagrams/cnn1.png?raw=true" alt="CNN1 Loss Function & Accuracy" width="100%"></td>
-    <td><img src="https://github.com/MartaFuentesF/capstone_project/blob/main/images_and_graphs/cnn_graphs_and_diagrams/cnn2.png?raw=true" alt="CNN2 Loss Function & Accuracy" width="100%"></td>
+    <td><img src="https://github.com/MartaFuentesF/capstone_project/blob/main/images_and_graphs/cnn_graphs_and_diagrams/cnn1_graph.png?raw=true" alt="CNN1 Loss Function & Accuracy" width="100%"></td>
+    <td><img src="https://github.com/MartaFuentesF/capstone_project/blob/main/images_and_graphs/cnn_graphs_and_diagrams/cnn2_graph.png?raw=true" alt="CNN2 Loss Function & Accuracy" width="100%"></td>
   </tr>
   <tr>
     <td><img src="https://github.com/MartaFuentesF/capstone_project/blob/main/images_and_graphs/cnn_graphs_and_diagrams/cnn3_graph.png?raw=true" alt="CNN3 Loss Function & Accuracy" width="100%"></td>
