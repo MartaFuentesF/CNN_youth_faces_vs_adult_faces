@@ -37,16 +37,6 @@ The images are 800 x 1200 pixel JPEG files.
 
 The distinction between adults and youth was chosen at 13 years of age. Some overlap is present in the directories, which could lead to the model having difficulty classifying pre-teenager youth.
 
-## Image Examples
-
-Below are some example images from the datasets:
-
-<p align="center">
-  <img src="https://github.com/MartaFuentesF/capstone_project/blob/main/images_and_graphs/image_examples/PLP_examples.JPG" alt="Samples of Portraits of Youth (PLP)" width="30%">
-  <img src="https://github.com/MartaFuentesF/capstone_project/blob/main/images_and_graphs/image_examples/POR_examples.JPG" alt="Samples of Portraits of Adults (POR)" width="30%">
-  <img src="https://github.com/MartaFuentesF/capstone_project/blob/main/images_and_graphs/image_examples/Problematic_images.JPG" alt="Samples of Potentially Problematic Images" width="30%">
-</p>
-
 ### Data Preparation
 
 Data preparation was done using two approaches. The successful approach is outlined below, with a description of the unsuccessful attempt provided as an addendum for those interested in the detailed process.
@@ -59,6 +49,16 @@ The process used is from ['a repository on github.com'] and is copyrighted: Copy
     - Using 2926 files for validation.
 
 After loading the images, I performed some exploratory data analysis (EDA) to visualize the dataset. The samples below highlight a mix of image types: some are traditional portraits centered on individual faces, while others are not. Some of the images in both classes are of several people together or full-body images. This variety might influence how well the CNN learns to distinguish between adult and youth faces. As a future improvement, I aim to filter out images that do not feature single, centered faces to potentially improve the model's performance.
+
+### Image Examples
+
+Below are some example images from the datasets:
+
+<p align="center">
+  <img src="https://github.com/MartaFuentesF/capstone_project/blob/main/images_and_graphs/image_examples/PLP_examples.JPG" alt="Samples of Portraits of Youth (PLP)" width="30%">
+  <img src="https://github.com/MartaFuentesF/capstone_project/blob/main/images_and_graphs/image_examples/POR_examples.JPG" alt="Samples of Portraits of Adults (POR)" width="30%">
+  <img src="https://github.com/MartaFuentesF/capstone_project/blob/main/images_and_graphs/image_examples/Problematic_images.JPG" alt="Samples of Potentially Problematic Images" width="30%">
+</p>
 
 
 As the reader may have noticed, there is a class imbalance in the data the model will train on.
@@ -165,16 +165,16 @@ Four CNN models were built with different architectures:
 
 ### Performance Metrics
 The performance of the models was evaluated using accuracy and loss metrics:
+| Model | Training Loss | Training Accuracy | Validation Loss | Validation Accuracy | F1 Score | Observations                                                                                   |
+|-------|---------------|-------------------|-----------------|---------------------|----------|-----------------------------------------------------------------------------------------------|
+| CNN 1 | 0.4773        | 0.7526            | 0.5494          | 0.7180              | -        | Good initial performance with a simple architecture. Lacks complexity to capture intricate patterns. |
+| CNN 2 | 0.3744        | 0.8161            | 0.6049          | 0.7397              | -        | Improved accuracy due to additional hidden layers, but overfitting likely due to lack of regularization. |
+| CNN 3 | 1.1090        | 0.6189            | 1.0557          | 0.6176              | -        | Regularization (L2, dropout) added; performance decreased, indicating regularization may need tuning. |
+| CNN 4 | 0.6682        | 0.5934            | 0.6603          | 0.6025              | 0.60     | High dropout reduced overfitting but led to underfitting, causing lower accuracy.                 |
 
-| Model | Training Loss | Training Accuracy | Validation Loss | Validation Accuracy | Observations                                                                                   |
-|-------|---------------|-------------------|-----------------|---------------------|-----------------------------------------------------------------------------------------------|
-| CNN 1 | 0.4773        | 0.7526            | 0.5494          | 0.7180              | Good initial performance with a simple architecture. Lacks complexity to capture intricate patterns. |
-| CNN 2 | 0.3744        | 0.8161            | 0.6049          | 0.7397              | Improved accuracy due to additional hidden layers, but overfitting likely due to lack of regularization. |
-| CNN 3 | 1.1090        | 0.6189            | 1.0557          | 0.6176              | Regularization (L2, dropout) added; performance decreased, indicating regularization may need tuning. |
-| CNN 4 | 0.6682        | 0.5934            | 0.6603          | 0.6025              | High dropout reduced overfitting but led to underfitting, causing lower accuracy.                 |
 
 
-Below are the graphs of binary cross-entropy versus epochs and accuracy as a function of epochs for the models.
+
 ### CNN Loss Function & Accuracy Graphs
 
 <table style="width:100%">
@@ -188,7 +188,8 @@ Below are the graphs of binary cross-entropy versus epochs and accuracy as a fun
   </tr>
 </table>
 
-### Model Performance
+### CNN4 ROC Curve with AUC score
+![CNN4 ROC AUC]('')
 
 ## Summary of Results
 
@@ -198,8 +199,7 @@ Below are the graphs of binary cross-entropy versus epochs and accuracy as a fun
 
 - **CNN 3**: Regularization techniques such as L2 regularization and dropout were introduced in this model to combat overfitting. Unfortunately, these adjustments led to a decrease in overall performance. This suggests that the regularization parameters were too strong, resulting in underfitting where the model couldn't adequately capture the data patterns.
 
-- **CNN 4**: This model increased the dropout rates to further reduce overfitting. While it effectively reduced overfitting, the model suffered from lower overall accuracy. This underperformance indicates that the model may have been too regularized, which impeded its learning ability.
-
+- **CNN 4**: This model increased the dropout rates to further mitigate overfitting. Although this approach successfully reduced overfitting, it resulted in lower overall accuracy, suggesting that the model may have been overly regularized. This excessive regularization likely hindered the model's ability to learn effectively. The ROC curve and AUC indicate that the model's True Positive Rate is suboptimal, highlighting significant limitations in its predictive performance. Additionally, the F1 score for CNN 4 is 0.6, which implies a balanced performance between precision and recall. However, this score also reflects moderate precision and recall, suggesting that the model has significant misclassifications. In a confusion matrix, this means the model has a notable number of both false positives and false negatives, further underscoring the need for better optimization.
 
 ## Key Observations
 
