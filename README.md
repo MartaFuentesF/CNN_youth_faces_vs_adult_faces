@@ -164,7 +164,7 @@ Four CNN models were built with different architectures:
 
 
 ### Performance Metrics
-The performance of the models was evaluated using accuracy and loss metrics:
+The performance of the models was evaluated using accuracy and loss metrics, additionally, CNN4 was evaluated using an F1 score:
 | Model | Training Loss | Training Accuracy | Validation Loss | Validation Accuracy | F1 Score | Observations                                                                                   |
 |-------|---------------|-------------------|-----------------|---------------------|----------|-----------------------------------------------------------------------------------------------|
 | CNN 1 | 0.4773        | 0.7526            | 0.5494          | 0.7180              | -        | Good initial performance with a simple architecture. Lacks complexity to capture intricate patterns. |
