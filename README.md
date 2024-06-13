@@ -41,7 +41,7 @@ The distinction between adults and youth was chosen at 13 years of age. Some ove
 
 Data preparation was done using two approaches. The successful approach is outlined below, with a description of the unsuccessful attempt provided as an addendum for those interested in the detailed process.
 
-The process used is from ['a repository on github.com'] and is copyrighted: Copyright 2018 The TensorFlow Authors. In order to use Keras' `image_dataset_from_directory()` function, a 'data_dir' directory was created; it contains the directories 'POR' (portraits of adults) and 'PLP' (portraits of youth). Using the process described in the cited source, training and validation datasets were created as 'train_ds' and 'val_ds,' each having a `validation_split` of 0.2. The result output is as follows:
+The process used is from [a repository on github]('https://github.com/tensorflow/docs/blob/master/site/en/tutorials/images/classification.ipynb') and is copyrighted: Copyright 2018 The TensorFlow Authors. In order to use Keras' `image_dataset_from_directory()` function, a 'data_dir' directory was created; it contains the directories 'POR' (portraits of adults) and 'PLP' (portraits of youth). Using the process described in the cited source, training and validation datasets were created as 'train_ds' and 'val_ds,' each having a `validation_split` of 0.2. The result output is as follows:
 
     - Found 14633 files belonging to 2 classes.
     - Using 11707 files for training.
@@ -227,13 +227,13 @@ Binary cross-entropy was chosen as the loss function because the problem is a bi
 ## Challenges and Learnings
 
 ### Computational Resources
-The models required substantial computational power and time to fit. Each model took five to ten hours to fit, using an M3 chip with 18GB of memory. Future work could explore using GPU acceleration or cloud-based solutions.
+The models required substantial computational power and time to fit. Each model took five to ten hours to fit, using an M3 chip with 18GB of memory. Future work could explore cloud-based solutions.
 
 ### Quality of the Data
 Given the objective of this model is to differentiate between the faces of adults and youth, it would be highly beneficial to train the model using datasets that consist exclusively of facial images. However, acquiring large datasets that meet such specific requirements poses a significant challenge.
 
 ## Future Work
-Future improvements could include experimenting with more advanced architectures like ResNet, implementing data augmentation, and exploring other regularization techniques. Additionally, evaluating the model using other metrics such as precision, recall, and F1-score could provide more insights into its performance.
+Visualizing the images that were misclassified to gain some understanding of how to continue to tune the model. Future improvements could include experimenting with more advanced architectures like ResNet, implementing data augmentation, and exploring other regularization techniques. Additionally, evaluating the model using other metrics such as precision, recall, and F1-score could provide more insights into its performance.
 
 ## Conclusion
 
@@ -245,9 +245,7 @@ This project successfully developed and evaluated four CNN models for distinguis
 
 3. **Improved Generalization**: Insights gained from poor performance help in designing models that generalize better to unseen data. By addressing the factors that lead to overfitting, we can create models that perform consistently across diverse datasets.
 
-4. **Efficient Resource Utilization**: Understanding the computational demands of different model architectures enables more efficient use of computational resources. This can lead to faster training times and more cost-effective deployment.
-
-5. **Application Versatility**: Despite initial performance challenges, the potential applications of this model span various sectors, including healthcare for age-related diagnoses, social media for age verification, and marketing for age-targeted strategies. Each sector benefits from a model that is optimized based on a thorough understanding of its limitations and strengths.
+4. **Application Versatility**: Despite initial performance challenges, the potential applications of this model span various sectors, including healthcare for age-related diagnoses, social media for age verification, and marketing for age-targeted strategies. 
 
 By leveraging the lessons learned from this project's initial phases, we can refine our approach and develop robust CNN models that meet the specific needs of real-world applications. The versatility and impact of these models are significant, provided that the continuous process of evaluation and optimization is maintained.
 
