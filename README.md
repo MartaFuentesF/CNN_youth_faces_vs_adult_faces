@@ -77,6 +77,7 @@ Different architectures were employed for each CNN to iteratively improve perfor
 
 Note: A single output neuron with sigmoid activation was chosen for this binary classification task, as recommended by 'itdxer' on [Stack Exchange](https://stats.stackexchange.com/questions/207049/neural-network-for-binary-classification-use-1-or-2-output-neurons).
 
+The CNN will predict the probabilities for the validation set. The predicted probabilities are thresholded at 0.5 to convert them to class labels (0 or 1). Boolean values are returned. More on this in notebook cnn4.
 
 
 
